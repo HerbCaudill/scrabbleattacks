@@ -32,6 +32,10 @@ const getStyles = ({ size }: SideProps) => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
+      border: '1px solid #eee',
+      padding: size / 2,
+      borderRadius: size / 3,
+      marginBottom: size / 2,
     }),
     name: css({
       display: 'flex',
