@@ -23,7 +23,6 @@ export const Game = ({ localPlayerName, players, size = 36 }: GameProps) => {
             words={player.words}
             name={player.name}
           ></Side>
-          <HorizontalRule size={size} />
         </Fragment>
       ))}
 
