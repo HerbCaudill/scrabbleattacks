@@ -14,6 +14,7 @@ export const Word = (props: WordProps) => {
           return (
             <Tile
               key={i}
+              id={i}
               size={size}
               letter={letter as Letter}
               seed={seed}

@@ -1,24 +1,32 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Fragment, MouseEventHandler } from 'react'
-import { Letter, points } from 'scrabble'
+import { TileValue, points } from 'scrabble'
 import tinycolor from 'tinycolor2'
 import { fade, linearGradient, pct, px, rotate, translate } from '../lib/css'
 import { randomGenerator } from '../randomGenerator'
 
+export type TileClickHandler = (key: number) => void
+
+export interface TileProps extends TileValue {
+  size: number
+  seed?: string
+  jiggleFactor?: number
+  onClick?: TileClickHandler
+}
+
 export const Tile = (props: TileProps) => {
-  const { letter, seed = letter, isFaceUp = true, onClick } = props
+  const { letter, id, isFaceUp = false, seed = letter, onClick = NO_OP } = props
 
   const expandedSeed = `${seed}_${isFaceUp ? 'up' : 'down'}`
   const styles = getStyles({ ...props, seed: expandedSeed })
 
   return (
-    <div css={styles.tile} onClick={onClick}>
+    <div css={styles.tile} onClick={_ => onClick(id)}>
       {isFaceUp && (
-        <Fragment>
+        <>
           <span css={styles.letter}>{letter}</span>
           <span css={styles.points}>{points(letter)}</span>
-        </Fragment>
+        </>
       )}
     </div>
   )
@@ -146,11 +154,4 @@ const getStyles = ({ size, seed, jiggleFactor = 10 }: TileProps) => {
   return { tile, letter, points }
 }
 
-export interface TileProps {
-  letter: Letter
-  size: number
-  seed?: string
-  isFaceUp?: boolean
-  jiggleFactor?: number
-  onClick?: MouseEventHandler<HTMLElement>
-}
+const NO_OP = () => {}

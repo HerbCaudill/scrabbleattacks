@@ -1,23 +1,25 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react'
-import { Tile } from './Tile'
 import { TileSet } from 'scrabble'
+import { Tile, TileClickHandler } from './Tile'
 
 export const Board = (props: BoardProps) => {
-  const { tiles, size = 75, jiggleFactor, seed } = props
+  const { tiles, size, jiggleFactor, seed, onTileClick = () => {} } = props
   const styles = getStyles(props)
 
   return (
     <div css={styles.board}>
-      {tiles.map(({ letter, isFaceUp }, i) => (
-        <div css={styles.tile} key={i}>
+      {tiles.map(({ letter, id: key, isFaceUp }) => (
+        <div css={styles.tile} key={key}>
           <Tile
+            id={key}
             size={size}
             letter={letter}
-            seed={`${seed}-${i}`}
+            seed={`${seed}-${key}`}
             isFaceUp={isFaceUp}
             jiggleFactor={jiggleFactor}
+            onClick={onTileClick}
           />
         </div>
       ))}
@@ -25,8 +27,8 @@ export const Board = (props: BoardProps) => {
   )
 }
 
-const getStyles = ({ size }: Partial<BoardProps>) => {
-  const p = size! / 10
+const getStyles = ({ size }: BoardProps) => {
+  const p = size / 10
   return {
     board: css({
       display: 'flex',
@@ -45,8 +47,9 @@ const getStyles = ({ size }: Partial<BoardProps>) => {
 export interface BoardProps {
   width?: number
   height?: number
-  size?: number
+  size: number
   jiggleFactor?: number
   tiles: TileSet
   seed?: string
+  onTileClick?: TileClickHandler
 }

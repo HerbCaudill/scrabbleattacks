@@ -1,7 +1,14 @@
 import { randomGenerator } from './randomGenerator'
 
 export type Letter = keyof typeof letterMap
-export type TileSet = { letter: Letter; isFaceUp: boolean }[]
+
+export interface TileValue {
+  letter: Letter
+  id: number
+  isFaceUp: boolean
+}
+
+export type TileSet = TileValue[]
 
 export const letterMap = {
   A: { points: 1, tiles: 9 },
@@ -44,7 +51,7 @@ export const tiles = (letter: Letter) => {
 
 export const alphabet = Object.keys(letterMap) as Letter[]
 
-export const initialLetters = alphabet.flatMap(letter =>
+export const initialLetters: Letter[] = alphabet.flatMap(letter =>
   new Array(tiles(letter)).fill(letter)
 )
 
@@ -53,8 +60,10 @@ export const initialTiles = (
 ): TileSet => {
   const random = randomGenerator(seed)
   const randomSort = () => random() - 0.5
-  const makeTile = (letter: Letter) => ({ letter, isFaceUp: false })
-  return initialLetters.sort(randomSort).map(makeTile)
+  const isFaceUp = false
+  return initialLetters
+    .sort(randomSort)
+    .map((letter, i) => ({ letter, id: i, isFaceUp }))
 }
 
 export const wordScore = (word: string) =>
