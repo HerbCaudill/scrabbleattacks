@@ -18,6 +18,9 @@ const getStyles = ({ size }: ScoreProps) => {
       background: 'blue',
       fontFamily: 'Oswald, sans-serif',
       color: 'white',
+      position: 'absolute',
+      right: 0,
+      top: 0,
       height: size,
       width: size,
       lineHeight: 1,
@@ -28,7 +31,7 @@ const getStyles = ({ size }: ScoreProps) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      transform: `translate(-${size / 3}px,-${size / 5}px)`,
+      transform: `translate(${(size * 2) / 3}px,-${size / 5}px)`,
     }),
   }
 }
