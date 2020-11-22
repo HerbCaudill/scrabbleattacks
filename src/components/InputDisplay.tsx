@@ -3,15 +3,22 @@ import { Cursor } from './Cursor'
 
 type InputDisplayProps = {
   input: string
+  size: number
 }
 
-export const InputDisplay: React.FC<InputDisplayProps> = ({ input }) => {
+export const InputDisplay: React.FC<InputDisplayProps> = ({ input, size }) => {
   return (
-    <div>
+    <div
+      css={{
+        minHeight: size * 2,
+        fontFamily: 'Oswald, sans-serif',
+        fontSize: size,
+      }}
+    >
       {input.split('').map(c => {
         return <span>{c}</span>
       })}
-      <Cursor></Cursor>
+      <Cursor size={size}></Cursor>
     </div>
   )
 }

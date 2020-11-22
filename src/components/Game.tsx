@@ -1,18 +1,46 @@
 /** @jsxImportSource @emotion/react */
 import { Board } from 'components/Board'
-import { Fragment, useState } from 'react'
-import { initialTiles, TileSet } from 'scrabble'
+import { Fragment, useReducer } from 'react'
+import { initialTiles, Letter, TileSet } from 'scrabble'
 import { Side } from './Side'
+import { State, Player } from '../types'
+import { reducer } from './reducer'
+import { useKeyboard } from 'hooks/useKeyboard'
+import { InputDisplay } from './InputDisplay'
 
-export const Game = ({ localPlayerName, players, size = 36 }: GameProps) => {
-  const [tiles, setTiles] = useState(initialTiles('1'))
-
-  const onTileClick = (key: number) => {
-    setTiles(tiles => flipTile(tiles, key))
+export const Game = ({
+  localPlayerName,
+  players,
+  seed,
+  size = 36,
+}: GameProps) => {
+  const initialState: State = {
+    tiles: initialTiles(seed),
+    players,
+    input: '',
   }
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const onTileClick = (id: number) => {
+    dispatch({ type: 'FLIP', payload: { id } })
+  }
+
+  useKeyboard(({ key }: KeyboardEvent) => {
+    if (isAlpha(key))
+      dispatch({
+        type: 'ALPHA',
+        payload: { letter: key.toUpperCase() as Letter },
+      })
+    else if (key === 'Delete' || key === 'Backspace')
+      dispatch({ type: 'BACKSPACE' })
+    else if (key === 'Escape') dispatch({ type: 'CANCEL' })
+    else if (key === 'Enter') dispatch({ type: 'COMMIT' })
+  })
 
   return (
     <div>
+      <InputDisplay input={state.input} size={size} />
       {players.map(player => (
         <Fragment key={player.name}>
           <Side
@@ -29,23 +57,18 @@ export const Game = ({ localPlayerName, players, size = 36 }: GameProps) => {
         size={size}
         jiggleFactor={40}
         seed="1"
-        tiles={tiles}
+        tiles={state.tiles}
         onTileClick={onTileClick}
       />
     </div>
   )
 }
 
-export interface Player {
-  name: string
-  words: string[]
-}
-
 export interface GameProps {
   localPlayerName: string
   players: Player[]
   size: number
+  seed: string
 }
 
-const flipTile = (tiles: TileSet, id: number) =>
-  tiles.map(t => (t.id === id ? { ...t, isFaceUp: true } : t))
+export const isAlpha = (key: string) => /^[A-Za-z]$/.test(key)
