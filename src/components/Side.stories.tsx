@@ -5,7 +5,7 @@ export default { title: 'Side', id: '4' }
 
 export const Herb = () => (
   <Side
-    size={400}
+    size={36}
     words={['QUAGMIRE', 'JINX', 'ABSQUATULATED']}
     name="Herb"
   ></Side>

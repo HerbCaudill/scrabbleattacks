@@ -24,7 +24,7 @@ export const Tile = (props: TileProps) => {
   )
 }
 
-const getStyles = ({ size = 100, seed, jiggleFactor }: Partial<TileProps>) => {
+const getStyles = ({ size, seed, jiggleFactor = 10 }: TileProps) => {
   const unit = size / 19
   const unitPx = (n: number, fontSize: number = 1) => px(n * unit * fontSize)
 
@@ -88,13 +88,11 @@ const getStyles = ({ size = 100, seed, jiggleFactor }: Partial<TileProps>) => {
     borderStyle: 'solid',
   }
 
-  const jiggle = (n: number = 3) => ({
+  const jiggle = (n: number) => ({
     transform: [
-      rotate(rnd0(n)), //
-      translate(rnd0UnitPx(n / 4), rnd0UnitPx(n / 4)),
+      rotate(rnd0(n / 2)), //
+      translate(rnd0UnitPx(n / 10), rnd0UnitPx(n / 10)),
     ].join(' '),
-    // marginBottom: rndUnitPx(n / 2),
-    // marginRight: rndUnitPx(n / 2),
   })
 
   const tile = css({
@@ -150,7 +148,7 @@ const getStyles = ({ size = 100, seed, jiggleFactor }: Partial<TileProps>) => {
 
 export interface TileProps {
   letter: Letter
-  size?: number
+  size: number
   seed?: string
   isFaceUp?: boolean
   jiggleFactor?: number

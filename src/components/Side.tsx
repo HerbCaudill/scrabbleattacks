@@ -4,21 +4,21 @@ import { totalScore } from 'scrabble'
 import { Word } from './Word'
 
 export const Side = (props: SideProps) => {
-  const { name, words } = props
-  const styles = getStyles()
+  const { name, words, size, isLocalPlayer } = props
+  const styles = getStyles(props)
 
   return (
     <div css={styles.side}>
       <div css={styles.name}>
-        <div>{name}</div>
         <div css={styles.score}>
           <div>{totalScore(words)}</div>
         </div>
+        <div>{name}</div>
       </div>
       <div css={styles.words}>
         {words.map(word => (
           <div css={styles.word} key={word}>
-            <Word word={word} size={36} />
+            <Word word={word} size={size} />
           </div>
         ))}
       </div>
@@ -26,7 +26,7 @@ export const Side = (props: SideProps) => {
   )
 }
 
-const getStyles = () => {
+const getStyles = ({ size }: SideProps) => {
   return {
     side: css({
       display: 'flex',
@@ -39,8 +39,8 @@ const getStyles = () => {
       alignItems: 'center',
       fontFamily: '"IBM Plex Serif", serif',
       fontWeight: 300,
-      fontSize: 35,
-      marginBottom: 15,
+      fontSize: size,
+      marginBottom: size / 2,
       lineHeight: 1,
     }),
     score: css({
@@ -48,7 +48,7 @@ const getStyles = () => {
       fontWeight: 500,
       color: 'blue',
       fontSize: 20,
-      marginLeft: 10,
+      marginRight: 10,
       border: '3px solid blue',
       borderRadius: '50%',
       height: 30,
@@ -72,6 +72,7 @@ const getStyles = () => {
 }
 
 export interface SideProps {
+  isLocalPlayer: boolean
   name: string
   words: string[]
   size: number
