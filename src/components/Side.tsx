@@ -1,78 +1,73 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
 import { totalScore } from 'scrabble'
 import { Word } from './Word'
 
 export const Side = (props: SideProps) => {
   const { name, words, size, isLocalPlayer } = props
-  const styles = getStyles(props)
-
+  const borderColor = isLocalPlayer ? '#ddd' : '#eee'
   return (
-    <div css={styles.side}>
-      <div css={styles.name}>
-        <div css={styles.score}>
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        border: '1px solid',
+        borderColor,
+        padding: size / 2,
+        borderRadius: size / 3,
+        marginBottom: size / 2,
+      }}
+    >
+      {/* player score  & name */}
+      <div
+        css={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          fontFamily: '"IBM Plex Serif", serif',
+          fontWeight: 300,
+          fontSize: size,
+          marginBottom: size / 2,
+          lineHeight: 1,
+        }}
+      >
+        {/* player score */}
+        <div
+          css={{
+            fontFamily: 'Oswald, sans-serif',
+            fontWeight: 500,
+            color: 'blue',
+            fontSize: 20,
+            marginRight: 10,
+            border: '3px solid blue',
+            borderRadius: '50%',
+            height: 30,
+            width: 30,
+            background: 'white',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            lineHeight: 1,
+          }}
+        >
           <div>{totalScore(words)}</div>
         </div>
+
+        {/* player name */}
         <div>{name}</div>
       </div>
-      <div css={styles.words}>
+
+      {/* words */}
+
+      <div css={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         {words.map(word => (
-          <div css={styles.word} key={word}>
+          <div css={{ marginRight: 20, marginBottom: 10 }} key={word}>
             <Word word={word} size={size} />
           </div>
         ))}
       </div>
     </div>
   )
-}
-
-const getStyles = ({ size }: SideProps) => {
-  return {
-    side: css({
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-start',
-      border: '1px solid #eee',
-      padding: size / 2,
-      borderRadius: size / 3,
-      marginBottom: size / 2,
-    }),
-    name: css({
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      fontFamily: '"IBM Plex Serif", serif',
-      fontWeight: 300,
-      fontSize: size,
-      marginBottom: size / 2,
-      lineHeight: 1,
-    }),
-    score: css({
-      fontFamily: 'Oswald, sans-serif',
-      fontWeight: 500,
-      color: 'blue',
-      fontSize: 20,
-      marginRight: 10,
-      border: '3px solid blue',
-      borderRadius: '50%',
-      height: 30,
-      width: 30,
-      background: 'white',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      lineHeight: 1,
-    }),
-    words: css({
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    }),
-    word: css({
-      marginRight: 20,
-      marginBottom: 10,
-    }),
-  }
 }
 
 export interface SideProps {
