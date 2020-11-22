@@ -1,17 +1,15 @@
 /** @jsxImportSource @emotion/react */
 
-import { css } from '@emotion/react'
 import { TileSet } from 'scrabble'
 import { Tile, TileClickHandler } from './Tile'
 
 export const Board = (props: BoardProps) => {
-  const { tiles, size, jiggleFactor, seed, onTileClick = () => {} } = props
-  const styles = getStyles(props)
+  const { tiles, size, jiggleFactor, seed, onTileClick = NO_OP } = props
 
   return (
-    <div css={styles.board}>
+    <div css={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
       {tiles.map(({ letter, id: key, isFaceUp }) => (
-        <div css={styles.tile} key={key}>
+        <div css={{ padding: size / 10 }} key={key}>
           <Tile
             id={key}
             size={size}
@@ -27,23 +25,6 @@ export const Board = (props: BoardProps) => {
   )
 }
 
-const getStyles = ({ size }: BoardProps) => {
-  const p = size / 10
-  return {
-    board: css({
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-    }),
-    tile: css({
-      paddingTop: p,
-      paddingBottom: p,
-      paddingLeft: p * 2,
-      paddingRight: p,
-    }),
-  }
-}
-
 export interface BoardProps {
   width?: number
   height?: number
@@ -53,3 +34,5 @@ export interface BoardProps {
   seed?: string
   onTileClick?: TileClickHandler
 }
+
+const NO_OP = () => {}
