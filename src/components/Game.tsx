@@ -26,8 +26,10 @@ export const Game = ({
     dispatch({ type: 'FLIP', payload: { id } })
   }
 
-  useKeyboard(({ key }: KeyboardEvent) => {
-    if (isAlpha(key)) {
+  useKeyboard((e: KeyboardEvent) => {
+    const { key } = e
+    let handled = true
+    if (isAlpha(e)) {
       const letter = key.toUpperCase() as Letter
       dispatch({ type: 'ALPHA', payload: { letter } })
     } else if (key === 'Delete' || key === 'Backspace') {
@@ -36,6 +38,12 @@ export const Game = ({
       dispatch({ type: 'CANCEL' })
     } else if (key === 'Enter') {
       dispatch({ type: 'COMMIT' })
+    } else {
+      handled = false
+    }
+    if (handled) {
+      e.preventDefault()
+      e.stopPropagation()
     }
   })
 
@@ -72,4 +80,5 @@ export interface GameProps {
   seed: string
 }
 
-export const isAlpha = (key: string) => /^[A-Za-z]$/.test(key)
+export const isAlpha = (e: KeyboardEvent) =>
+  !e.ctrlKey && /^[A-Za-z]$/.test(e.key)
