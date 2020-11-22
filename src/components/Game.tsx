@@ -2,7 +2,6 @@
 import { Board } from 'components/Board'
 import { Fragment, useState } from 'react'
 import { initialTiles, TileSet } from 'scrabble'
-import { HorizontalRule } from './HorizontalRule'
 import { Side } from './Side'
 
 export const Game = ({ localPlayerName, players, size = 36 }: GameProps) => {
