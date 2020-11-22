@@ -10,7 +10,7 @@ export const Word = (props: WordProps) => {
 
   return (
     <div css={styles.word}>
-      <div>
+      <div css={styles.wordInner}>
         {word.split('').map((letter, i) => {
           const seed = `${word}-${i}`
           return (
@@ -32,6 +32,9 @@ export const Word = (props: WordProps) => {
 const getStyles = (props: WordProps) => {
   return {
     word: css({
+      position: 'relative',
+    }),
+    wordInner: css({
       display: 'flex',
       justifyContent: 'center',
     }),
