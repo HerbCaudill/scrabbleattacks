@@ -15,8 +15,7 @@ const sortById = (a, b) =>
     : a[1].id.localeCompare(b[1].id, undefined, { numeric: true })
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  options: {
-    storySort: sortById,
-  },
+  actions: { disabled: true },
+  options: { storySort: sortById },
+  controls: { disabled: true },
 }

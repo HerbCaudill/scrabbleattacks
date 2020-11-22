@@ -93,8 +93,8 @@ const getStyles = ({ size = 100, seed, jiggleFactor }: Partial<TileProps>) => {
       rotate(rnd0(n)), //
       translate(rnd0UnitPx(n / 4), rnd0UnitPx(n / 4)),
     ].join(' '),
-    marginBottom: rndUnitPx(n / 2),
-    marginRight: rndUnitPx(n / 2),
+    // marginBottom: rndUnitPx(n / 2),
+    // marginRight: rndUnitPx(n / 2),
   })
 
   const tile = css({

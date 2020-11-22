@@ -44,9 +44,13 @@ export const tiles = (letter: Letter) => {
 
 export const alphabet = Object.keys(letterMap) as Letter[]
 
-export const initialLetters = alphabet.flatMap((letter) => new Array(tiles(letter)).fill(letter))
+export const initialLetters = alphabet.flatMap(letter =>
+  new Array(tiles(letter)).fill(letter)
+)
 
-export const initialTiles = (seed: string = new Date().toISOString()): TileSet => {
+export const initialTiles = (
+  seed: string = new Date().toISOString()
+): TileSet => {
   const random = randomGenerator(seed)
   const randomSort = () => random() - 0.5
   const makeTile = (letter: Letter) => ({ letter, isFaceUp: false })
@@ -56,4 +60,7 @@ export const initialTiles = (seed: string = new Date().toISOString()): TileSet =
 export const wordScore = (word: string) =>
   word.split('').reduce((sum, letter) => sum + points(letter as Letter), 0)
 
-export const totalScore = (words: string[]) => words.reduce((sum, word) => sum + wordScore(word), 0)
+const sum = (total: number, current: number) => total + current
+
+export const totalScore = (words: string[]) =>
+  words.map(wordScore).reduce(sum, 0)

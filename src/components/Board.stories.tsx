@@ -1,23 +1,21 @@
 ﻿import React from 'react'
-import { initialTiles } from '../scrabble'
+import { initialTiles, TileSet } from '../scrabble'
 import { Board } from './Board'
-
-export default { title: 'Board', id: '3' }
 
 const tiles = initialTiles('1')
 
-export const initial = () => {
-  const boardTiles = tiles
-  return <Board size={50} jiggleFactor={10} seed="1" tiles={boardTiles} />
-}
+const flipped = [5, 12, 21, 22, 50, 55, 60]
+const isFlipped = (i: number): boolean => flipped.includes(i)
+const newBoard = (boardTiles: TileSet) => (
+  <Board size={36} jiggleFactor={10} seed="1" tiles={boardTiles} />
+)
 
-export const someFlipped = () => {
-  const tilesToFlip = [5, 12, 21, 22, 50, 55, 60]
-  const boardTiles = tiles.map((t, i) => ({ ...t, isFaceUp: tilesToFlip.includes(i) }))
-  return <Board size={50} jiggleFactor={10} seed="1" tiles={boardTiles} />
-}
+export default { title: 'Board', id: '3' }
 
-export const allFlipped = () => {
-  const boardTiles = tiles.map((t) => ({ ...t, isFaceUp: true }))
-  return <Board size={50} jiggleFactor={10} seed="1" tiles={boardTiles} />
-}
+export const initial = () => newBoard(tiles)
+
+export const someFlipped = () =>
+  newBoard(tiles.map((t, i) => ({ ...t, isFaceUp: isFlipped(i) })))
+
+export const allFlipped = () =>
+  newBoard(tiles.map(t => ({ ...t, isFaceUp: true })))

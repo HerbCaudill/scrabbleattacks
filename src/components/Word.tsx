@@ -33,10 +33,10 @@ const getStyles = (props: WordProps) => {
   return {
     word: css({
       position: 'relative',
+      display: 'inline-flex',
     }),
     wordInner: css({
       display: 'flex',
-      justifyContent: 'center',
     }),
   }
 }

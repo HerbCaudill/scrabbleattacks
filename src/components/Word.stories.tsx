@@ -1,11 +1,16 @@
 ﻿import React from 'react'
 import { Word } from './Word'
 
-export default { title: 'Word', id: '2' }
+const centered = { display: 'flex', justifyContent: 'center' }
 
+export default { title: 'Word', id: '2' }
 export const ScrabbleAttacks = () => (
-  <div>
-    <Word word="SCRABBLE" size={50} />
-    <Word word="ATTACKS" size={75} />
-  </div>
+  <>
+    <div style={centered}>
+      <Word word="SCRABBLE" size={36} />
+    </div>
+    <div style={centered}>
+      <Word word="ATTACKS" size={50} />
+    </div>
+  </>
 )

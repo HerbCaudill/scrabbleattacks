@@ -10,20 +10,17 @@ export const Board = (props: BoardProps) => {
 
   return (
     <div css={styles.board}>
-      {tiles.map(({ letter, isFaceUp }, i) => {
-        return (
-          <div css={styles.tile}>
-            <Tile
-              key={i}
-              size={size}
-              letter={letter}
-              seed={`${seed}-${i}`}
-              isFaceUp={isFaceUp}
-              jiggleFactor={jiggleFactor}
-            />
-          </div>
-        )
-      })}
+      {tiles.map(({ letter, isFaceUp }, i) => (
+        <div css={styles.tile} key={i}>
+          <Tile
+            size={size}
+            letter={letter}
+            seed={`${seed}-${i}`}
+            isFaceUp={isFaceUp}
+            jiggleFactor={jiggleFactor}
+          />
+        </div>
+      ))}
     </div>
   )
 }

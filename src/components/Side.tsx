@@ -17,8 +17,8 @@ export const Side = (props: SideProps) => {
       </div>
       <div css={styles.words}>
         {words.map(word => (
-          <div css={styles.word}>
-            <Word word={word} size={40} />
+          <div css={styles.word} key={word}>
+            <Word word={word} size={36} />
           </div>
         ))}
       </div>
