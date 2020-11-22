@@ -5,7 +5,7 @@ export type Letter = keyof typeof letterMap
 export interface TileValue {
   letter: Letter
   id: number
-  isFaceUp: boolean
+  isFaceUp?: boolean
 }
 
 export type TileSet = TileValue[]

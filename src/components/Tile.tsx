@@ -15,7 +15,7 @@ export interface TileProps extends TileValue {
 }
 
 export const Tile = (props: TileProps) => {
-  const { letter, id, isFaceUp = false, seed = letter, onClick = NO_OP } = props
+  const { letter, id, isFaceUp = true, seed = id, onClick = NO_OP } = props
 
   const expandedSeed = `${seed}_${isFaceUp ? 'up' : 'down'}`
   const styles = getStyles({ ...props, seed: expandedSeed })

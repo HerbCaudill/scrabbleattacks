@@ -1,5 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Game } from './components/Game'
+import { Game, Player } from './components/Game'
 
-ReactDOM.render(<Game />, document.getElementById('root'))
+const players: Player[] = [
+  { name: 'Herb', words: ['QUAGMIRE', 'JINX'] },
+  { name: 'Nancy', words: ['ABJURE', 'EXARCH'] },
+]
+
+ReactDOM.render(
+  <Game size={36} localPlayerName="Herb" players={players} />,
+  document.getElementById('root')
+)

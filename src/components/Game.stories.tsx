@@ -1,5 +1,4 @@
-﻿import { initialTiles } from 'scrabble'
-import { Game, Player } from './Game'
+﻿import { Game, Player } from './Game'
 
 const players: Player[] = [
   { name: 'Herb', words: ['QUAGMIRE', 'JINX'] },
@@ -7,12 +6,7 @@ const players: Player[] = [
 ]
 
 const newGame = () => (
-  <Game
-    tiles={initialTiles()}
-    size={36}
-    players={players}
-    localPlayerName="Herb"
-  />
+  <Game size={36} players={players} localPlayerName="Herb" />
 )
 
 export default { title: 'Game', id: '4' }
