@@ -19,7 +19,7 @@ export const reducer: Reducer<State, Action> = (state, action) => {
     }
 
     case 'BACKSPACE': {
-      return { ...state }
+      return { ...state, input: deleteLast(input) }
     }
 
     case 'CANCEL': {
@@ -38,3 +38,8 @@ export const reducer: Reducer<State, Action> = (state, action) => {
 
 export const showTile = (tiles: TileSet, id: number) =>
   tiles.map(t => (t.id === id ? { ...t, isFaceUp: true } : t))
+
+export const deleteLast = (s: string) => {
+  if (s.length === 0) return ''
+  else return s.slice(0, s.length - 1)
+}

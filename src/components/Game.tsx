@@ -27,15 +27,16 @@ export const Game = ({
   }
 
   useKeyboard(({ key }: KeyboardEvent) => {
-    if (isAlpha(key))
-      dispatch({
-        type: 'ALPHA',
-        payload: { letter: key.toUpperCase() as Letter },
-      })
-    else if (key === 'Delete' || key === 'Backspace')
+    if (isAlpha(key)) {
+      const letter = key.toUpperCase() as Letter
+      dispatch({ type: 'ALPHA', payload: { letter } })
+    } else if (key === 'Delete' || key === 'Backspace') {
       dispatch({ type: 'BACKSPACE' })
-    else if (key === 'Escape') dispatch({ type: 'CANCEL' })
-    else if (key === 'Enter') dispatch({ type: 'COMMIT' })
+    } else if (key === 'Escape') {
+      dispatch({ type: 'CANCEL' })
+    } else if (key === 'Enter') {
+      dispatch({ type: 'COMMIT' })
+    }
   })
 
   return (
