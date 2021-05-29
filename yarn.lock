@@ -5771,9 +5771,9 @@ dns-equal@^1.0.0:
   integrity sha1-s55/HabrCnW6nBcySzR1PEfgZU0=
 
 dns-packet@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/dns-packet/-/dns-packet-1.3.1.tgz#12aa426981075be500b910eedcd0b47dd7deda5a"
-  integrity sha512-0UxfQkMhYAUaZI+xrNZOz/as5KgDU0M/fQ9b6SpkyLbk3GEswDi6PADJVaYJradtRVsRIlF1zLyOodbcTCDzUg==
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/dns-packet/-/dns-packet-1.3.4.tgz#e3455065824a2507ba886c55a89963bb107dec6f"
+  integrity sha512-BQ6F4vycLXBvdrJZ6S3gZewt6rcrks9KBgM9vrhW+knGRqc8uEdT7fuCwloc7nny5xNoMJ17HGH0R/6fpo8ECA==
   dependencies:
     ip "^1.1.0"
     safe-buffer "^5.0.1"
@@ -6934,15 +6934,15 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-fontsource-ibm-plex-serif@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.0.9.tgz#9e83583f6ad00d429ebbe2c2e1b41cc20bdaf5ac"
-  integrity sha512-FMGAybCfSJtG4YbkIohCbHrFKXxJjL55/yTYjB0heKJy2Wiv7fwny4C6F3O5NY25Whtl85FmKYyHcj5wI96Kag==
+fontsource-ibm-plex-serif@3:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.1.5.tgz#d3fd4f4fcde0eb22cb8836bb1fc224a1a3e3a29c"
+  integrity sha512-bWhwJrT3nm6TWgl0fjJFKt9Ee9fXrmMe6q04Et33ckfh2yUsEe+0woUVHe1bCsDvm+T5xphgyzTzOLi4xKiobg==
 
-fontsource-oswald@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.0.3.tgz#31e8b1390688361c63f057f098055af3d88f5f03"
-  integrity sha512-Vddnq9YVLJGp3cNtNv7rgUZsE7HoJdYUcQF6QJ+F3aX63D7GgYgc8ZzCEw3KrhDQ6KwWlPkYiabAo9ODxi13ZQ==
+fontsource-oswald@3:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.1.6.tgz#d353302447f608aaa5b76199413466c78d85a70b"
+  integrity sha512-YGemcfgSOwYMJgM0VQE0i0kBDDm4iHsbWtqD/dmVnKA71HPjZcexHA+V2H3wAITBQBoqAsl1Jm+akjFI5cV1AQ==
 
 for-in@^1.0.2:
   version "1.0.2"
