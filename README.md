@@ -107,7 +107,8 @@ transitions
 - chooseNextPlayer
 -
 
-## Prior art
+## Credits
 
-- Tile styling inspired by [this Codepen](https://codepen.io/32bitkid/pen/NPEgbx) by
+- Scrabble Attacks was invented by [Nancy Hawa](https://github.com/nancyhawa).
+- The tile styling was inspired by [this Codepen](https://codepen.io/32bitkid/pen/NPEgbx) by
   [@32bitkid](https://codepen.io/32bitkid/pen/NPEgbx)
