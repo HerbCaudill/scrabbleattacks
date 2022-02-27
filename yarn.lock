@@ -6934,15 +6934,15 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-fontsource-ibm-plex-serif@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.0.9.tgz#9e83583f6ad00d429ebbe2c2e1b41cc20bdaf5ac"
-  integrity sha512-FMGAybCfSJtG4YbkIohCbHrFKXxJjL55/yTYjB0heKJy2Wiv7fwny4C6F3O5NY25Whtl85FmKYyHcj5wI96Kag==
+fontsource-ibm-plex-serif@3:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.1.5.tgz#d3fd4f4fcde0eb22cb8836bb1fc224a1a3e3a29c"
+  integrity sha512-bWhwJrT3nm6TWgl0fjJFKt9Ee9fXrmMe6q04Et33ckfh2yUsEe+0woUVHe1bCsDvm+T5xphgyzTzOLi4xKiobg==
 
-fontsource-oswald@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.0.3.tgz#31e8b1390688361c63f057f098055af3d88f5f03"
-  integrity sha512-Vddnq9YVLJGp3cNtNv7rgUZsE7HoJdYUcQF6QJ+F3aX63D7GgYgc8ZzCEw3KrhDQ6KwWlPkYiabAo9ODxi13ZQ==
+fontsource-oswald@3:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.1.6.tgz#d353302447f608aaa5b76199413466c78d85a70b"
+  integrity sha512-YGemcfgSOwYMJgM0VQE0i0kBDDm4iHsbWtqD/dmVnKA71HPjZcexHA+V2H3wAITBQBoqAsl1Jm+akjFI5cV1AQ==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -14172,9 +14172,9 @@ url-loader@4.1.1, url-loader@^4.0.0:
     schema-utils "^3.0.0"
 
 url-parse@^1.4.3:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
-  integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.10.tgz#9d3c2f736c1d75dd3bd2be507dcc111f1e2ea9c1"
+  integrity sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
