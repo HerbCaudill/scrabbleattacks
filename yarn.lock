@@ -6934,15 +6934,15 @@ follow-redirects@^1.0.0:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz#b42e8d93a2a7eea5ed88633676d6597bc8e384db"
   integrity sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
 
-fontsource-ibm-plex-serif@^3.0.9:
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.0.9.tgz#9e83583f6ad00d429ebbe2c2e1b41cc20bdaf5ac"
-  integrity sha512-FMGAybCfSJtG4YbkIohCbHrFKXxJjL55/yTYjB0heKJy2Wiv7fwny4C6F3O5NY25Whtl85FmKYyHcj5wI96Kag==
+fontsource-ibm-plex-serif@3:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/fontsource-ibm-plex-serif/-/fontsource-ibm-plex-serif-3.1.5.tgz#d3fd4f4fcde0eb22cb8836bb1fc224a1a3e3a29c"
+  integrity sha512-bWhwJrT3nm6TWgl0fjJFKt9Ee9fXrmMe6q04Et33ckfh2yUsEe+0woUVHe1bCsDvm+T5xphgyzTzOLi4xKiobg==
 
-fontsource-oswald@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.0.3.tgz#31e8b1390688361c63f057f098055af3d88f5f03"
-  integrity sha512-Vddnq9YVLJGp3cNtNv7rgUZsE7HoJdYUcQF6QJ+F3aX63D7GgYgc8ZzCEw3KrhDQ6KwWlPkYiabAo9ODxi13ZQ==
+fontsource-oswald@3:
+  version "3.1.6"
+  resolved "https://registry.yarnpkg.com/fontsource-oswald/-/fontsource-oswald-3.1.6.tgz#d353302447f608aaa5b76199413466c78d85a70b"
+  integrity sha512-YGemcfgSOwYMJgM0VQE0i0kBDDm4iHsbWtqD/dmVnKA71HPjZcexHA+V2H3wAITBQBoqAsl1Jm+akjFI5cV1AQ==
 
 for-in@^1.0.2:
   version "1.0.2"
@@ -9958,9 +9958,11 @@ node-dir@^0.1.10:
     minimatch "^3.0.2"
 
 node-fetch@^2.6.0:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
-  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  version "2.6.7"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.7.tgz#24de9fba827e3b4ae44dc8b20256a379160052ad"
+  integrity sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-forge@^0.10.0:
   version "0.10.0"
@@ -13797,6 +13799,11 @@ tr46@^2.0.2:
   dependencies:
     punycode "^2.1.1"
 
+tr46@~0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
+  integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
 trash@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/trash/-/trash-6.1.1.tgz#8fb863421b31f32571f2650b53534934d5e63025"
@@ -14408,6 +14415,11 @@ web-vitals@0:
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-0.2.4.tgz#ec3df43c834a207fd7cdefd732b2987896e08511"
   integrity sha512-6BjspCO9VriYy12z356nL6JBS0GYeEcA457YyRzD+dD6XYCQ75NKhcOHUMHentOE7OcVCIXXDvOm0jKFfQG2Gg==
 
+webidl-conversions@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
+  integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
+
 webidl-conversions@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-5.0.0.tgz#ae59c8a00b121543a2acc65c0434f57b0fc11aff"
@@ -14592,6 +14604,14 @@ whatwg-mimetype@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz#3d4b1e0312d2079879f826aff18dbeeca5960fbf"
   integrity sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==
+
+whatwg-url@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-5.0.0.tgz#966454e8765462e37644d3626f6742ce8b70965d"
+  integrity sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==
+  dependencies:
+    tr46 "~0.0.3"
+    webidl-conversions "^3.0.0"
 
 whatwg-url@^8.0.0:
   version "8.4.0"
